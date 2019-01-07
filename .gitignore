@@ -2,5 +2,3 @@ venv
 __pycache__
 .python-version
 .DS_Store
-src/twitter-api.json
-src/slack-config.json
