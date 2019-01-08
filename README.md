@@ -1,7 +1,7 @@
 # Supported Device
 Python 3.6
 
-# 使う手順
+# how to use
 ## use in local env
 pip install bs4
 cd src
