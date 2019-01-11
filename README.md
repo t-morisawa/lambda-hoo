@@ -2,6 +2,11 @@
 Python 3.6
 
 # how to use
+## install packages
+```
+pip install -r requirements.txt
+```
+
 ## use in local env
 ```
 pip install bs4
