@@ -29,17 +29,17 @@ def run():
     # toro (question)
     toro = Toro()
     toro_talk = toro.talk(qa.title)
-    # post_slack(toro.name, toro.get_icon(), toro_talk + '\n\n' + qa.url)
+    post_slack(toro.name, toro.get_icon(), toro_talk + '\n\n' + qa.url)
 
     # kuro (answer)
     kuro = Kuro()
     kuro_talk = Kuro().talk(qa.ba)
-    # post_slack(kuro.name, kuro.get_icon(), kuro_talk)
+    post_slack(kuro.name, kuro.get_icon(), kuro_talk)
 
     # lambda
     lambda_foo = LambdaFoo()
     lambda_talk = lambda_foo.talk(qa.title)
-    post_slack(lambda_foo.name, lambda_foo.get_icon(), lambda_talk + '\n\n' + qa.url)
+    # post_slack(lambda_foo.name, lambda_foo.get_icon(), lambda_talk + '\n\n' + qa.url)
 
     # # 開発用
     # print(qa.title)
