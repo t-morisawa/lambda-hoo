@@ -30,12 +30,6 @@ aws lambda create-function \
     --role arn:aws:iam::$AWSID:role/$ROLENAME \
     --memory-size 128
 
-# upload to Lambda (after the 2nd time)
-# aws lambda update-function-code \
-    #     --function-name $FUNCTIONNAME \
-    #     --zip-file fileb://../$DIRNAME.zip \
-    #     --publish
-
 # [START] set periodic execution
 aws events put-rule \
     --name $EVENTNAME \
