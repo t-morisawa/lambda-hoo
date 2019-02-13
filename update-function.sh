@@ -13,28 +13,11 @@ REGION=ap-northeast-1
 EVENTNAME=foo-event
 FUNCTIONNAME=foo-function
 
-# create lambda exec roles
-aws iam create-role --role-name $ROLENAME --assume-role-policy-document '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"lambda.amazonaws.com"},"Action":"sts:AssumeRole"}]}'
-
-# wait for avoid errors below create-function
-sleep 10
-
-# upload to Lambda (only first time)
-aws lambda create-function \
-    --function-name $FUNCTIONNAME  \
-    --region $REGION \
-    --zip-file fileb://../$DIRNAME.zip \
-    --handler slack-post.handler \
-    --runtime python3.6 \
-    --timeout 60 \
-    --role arn:aws:iam::$AWSID:role/$ROLENAME \
-    --memory-size 128
-
 # upload to Lambda (after the 2nd time)
-# aws lambda update-function-code \
-    #     --function-name $FUNCTIONNAME \
-    #     --zip-file fileb://../$DIRNAME.zip \
-    #     --publish
+aws lambda update-function-code \
+        --function-name $FUNCTIONNAME \
+        --zip-file fileb://../$DIRNAME.zip \
+        --publish
 
 # [START] set periodic execution
 aws events put-rule \
