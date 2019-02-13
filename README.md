@@ -24,9 +24,11 @@ fill out incoming-webhook url
 
 ### 3. use script
 ```
-sh deploy.sh
+sh create-function.sh
 ```
 
 ## use in lambda (update: after second time)
-comment out "upload to Lambda (after the 2nd time)"
-comment in "upload to Lambda (only first time)"
+
+```
+sh update-function.sh
+```
